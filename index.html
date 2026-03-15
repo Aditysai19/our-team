@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Team — LITOS · Rekindle Your Mind</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:      #046bd2;
+  --blue-dark: #045cb4;
+  --blue-bg:   #eaf2fc;
+  --navy:      #0c2a4a;
+  --navy2:     #0d3d72;
+  --white:     #ffffff;
+  --off:       #f8fafc;
+  --ink:       #1e293b;
+  --mid:       #334155;
+  --muted:     #64748b;
+  --border:    #e2e8f0;
+  --fh:        'Roboto Slab', Georgia, serif;
+  --fb:        'Roboto', sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--fb);
+  background:var(--white);
+  color:var(--mid);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── NAV ── */
+.site-nav{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:200;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;
+  padding:0 2rem;height:70px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-brand{
+  font-family:var(--fh);font-size:1.35rem;font-weight:700;
+  color:var(--blue);text-decoration:none;
+}
+.nav-brand span{
+  display:block;font-family:var(--fb);font-size:.58rem;
+  font-weight:400;color:var(--muted);letter-spacing:3px;
+  text-transform:uppercase;margin-top:-2px;
+}
+.nav-links{display:flex;align-items:center;gap:.2rem;}
+.nav-links a{
+  font-size:.82rem;font-weight:500;color:var(--ink);
+  text-decoration:none;padding:.4rem .85rem;border-radius:6px;
+  transition:color .15s,background .15s;
+}
+.nav-links a:hover{color:var(--blue);background:var(--blue-bg);}
+.nav-links .btn{
+  background:var(--blue);color:white !important;
+  padding:.45rem 1.1rem;border-radius:6px;
+  font-weight:500 !important;transition:background .15s !important;
+}
+.nav-links .btn:hover{background:var(--blue-dark) !important;}
+
+/* ── BANNER ── */
+.banner{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
+  padding:5rem 2rem 4rem;text-align:center;
+  position:relative;overflow:hidden;
+}
+.banner::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M0 0h30v30H0zm30 30h30v30H30z'/%3E%3C/g%3E%3C/svg%3E");
+}
+.banner-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
+.banner-chip{
+  display:inline-block;
+  font-size:.68rem;font-weight:500;letter-spacing:3px;
+  text-transform:uppercase;color:rgba(255,255,255,.6);
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);
+  padding:.28rem 1rem;border-radius:40px;margin-bottom:1.3rem;
+}
+.banner h1{
+  font-family:var(--fh);font-size:clamp(2rem,5vw,3rem);
+  font-weight:700;color:white;line-height:1.25;margin-bottom:.9rem;
+}
+.banner p{
+  font-size:1rem;font-weight:300;color:rgba(255,255,255,.65);
+  line-height:1.75;max-width:500px;margin:0 auto 2.5rem;
+}
+.b-stats{
+  display:flex;justify-content:center;flex-wrap:wrap;
+  max-width:620px;margin:0 auto;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:10px;overflow:hidden;
+}
+.b-stat{
+  flex:1;min-width:120px;padding:.95rem 1rem;text-align:center;
+  border-right:1px solid rgba(255,255,255,.09);
+}
+.b-stat:last-child{border-right:none;}
+.b-num{font-family:var(--fh);font-size:1.75rem;font-weight:700;color:white;line-height:1;}
+.b-lbl{font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.45);margin-top:4px;}
+
+/* ── DEPT TABS ── */
+.dept-bar{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:70px;z-index:100;
+}
+.dept-inner{
+  max-width:1200px;margin:0 auto;
+  padding:.65rem 2rem;display:flex;gap:.4rem;flex-wrap:wrap;
+}
+.d-tab{
+  font-size:.76rem;font-weight:500;
+  padding:.35rem .95rem;border-radius:5px;
+  border:1px solid var(--border);
+  background:transparent;color:var(--mid);
+  text-decoration:none;transition:all .15s;
+}
+.d-tab:hover,.d-tab.on{background:var(--blue);border-color:var(--blue);color:white;}
+
+/* ── SECTION ── */
+.wrap{max-width:1200px;margin:0 auto;padding:0 2rem;}
+.section{padding:4rem 0 0;}
+.section+.section{padding-top:3rem;}
+.sec-hd{margin-bottom:2.2rem;}
+.sec-hd h2{
+  font-family:var(--fh);font-size:1.75rem;font-weight:700;
+  color:var(--ink);line-height:1.2;
+}
+.sec-hd h2::after{
+  content:'';display:block;width:44px;height:3px;
+  background:var(--blue);border-radius:2px;margin-top:.5rem;
+}
+.sec-hd p{font-size:.88rem;color:var(--muted);margin-top:.5rem;}
+
+/* ── GRIDS ── */
+.grid-lg{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:26px;padding-bottom:4rem;
+}
+.grid-sm{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:20px;padding-bottom:4rem;
+}
+.grid-xs{
+  grid-template-columns:repeat(auto-fill,minmax(200px,240px));
+}
+
+/* ── FLIP CARD ── */
+.flip-wrap{
+  height:340px;
+  perspective:1000px;
+  cursor:pointer;
+}
+.grid-sm .flip-wrap{height:290px;}
+
+.flip-inner{
+  position:relative;width:100%;height:100%;
+  transform-style:preserve-3d;
+  transition:transform .55s cubic-bezier(.4,0,.2,1);
+  border-radius:14px;
+}
+/* flipped states — hover on desktop, .flipped class on mobile tap */
+.flip-wrap:hover .flip-inner,
+.flip-wrap.flipped .flip-inner{
+  transform:rotateY(180deg);
+}
+
+/* shared face styles */
+.flip-front,
+.flip-back{
+  position:absolute;inset:0;
+  border-radius:14px;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  overflow:hidden;
+}
+
+/* ── FRONT FACE — photo + name + role ── */
+.flip-front{
+  background:var(--off);
+  border:1px solid var(--border);
+  box-shadow:0 4px 16px rgba(0,0,0,.07);
+  display:flex;flex-direction:column;
+}
+.ff-photo{
+  flex:1;
+  background:linear-gradient(145deg,#dbeafe,#eff6ff);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.ff-photo img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:top center;
+  display:block;
+}
+.ff-initials{
+  width:90px;height:90px;border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--fh);font-size:2rem;font-weight:700;
+  color:white;letter-spacing:-1px;
+  box-shadow:0 8px 24px rgba(4,107,210,.3);
+}
+.grid-sm .ff-initials{width:72px;height:72px;font-size:1.6rem;}
+
+/* hint label */
+.ff-hint{
+  position:absolute;top:10px;right:10px;
+  background:rgba(4,107,210,.9);color:white;
+  font-size:.6rem;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;padding:.22rem .65rem;border-radius:4px;
+  opacity:.85;
+}
+
+.ff-info{
+  padding:1rem 1.2rem;
+  border-top:1px solid var(--border);
+  background:white;
+}
+.ff-name{
+  font-family:var(--fh);font-size:1.1rem;font-weight:600;
+  color:var(--ink);line-height:1.2;margin-bottom:.15rem;
+}
+.grid-lg .ff-name{font-size:1.25rem;}
+.ff-role{
+  font-size:.68rem;font-weight:500;
+  text-transform:uppercase;letter-spacing:1.8px;color:var(--blue);
+}
+
+/* ── BACK FACE — full info ── */
+.flip-back{
+  background:var(--navy);
+  transform:rotateY(180deg);
+  display:flex;flex-direction:column;
+  padding:1.4rem 1.5rem;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 8px 28px rgba(4,107,210,.25);
+}
+.fb-role{
+  font-size:.62rem;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:rgba(255,255,255,.45);
+  margin-bottom:.3rem;
+}
+.fb-name{
+  font-family:var(--fh);font-size:1.15rem;font-weight:700;
+  color:white;line-height:1.2;margin-bottom:.8rem;
+}
+.fb-bio{
+  font-size:.78rem;line-height:1.65;
+  color:rgba(255,255,255,.72);
+  flex:1;
+  display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;
+}
+.grid-lg .fb-bio{-webkit-line-clamp:5;}
+
+/* skills section */
+.fb-section{margin-top:.85rem;}
+.fb-section-lbl{
+  font-size:.58rem;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:rgba(255,255,255,.35);
+  margin-bottom:.45rem;
+}
+.fb-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.fb-tag{
+  font-size:.63rem;font-weight:500;
+  padding:.18rem .65rem;border-radius:4px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.75);
+}
+.fb-tag.tool{
+  background:rgba(4,107,210,.2);
+  border-color:rgba(4,107,210,.35);
+  color:#7bbfff;
+}
+
+/* linkedin on back */
+.fb-li{
+  display:inline-flex;align-items:center;gap:5px;
+  margin-top:.85rem;font-size:.72rem;font-weight:500;
+  color:rgba(255,255,255,.5);text-decoration:none;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:.75rem;
+  transition:color .15s;
+}
+.fb-li:hover{color:white;}
+.fb-li svg{width:12px;height:12px;}
+
+/* close hint on back */
+.fb-close{
+  position:absolute;top:10px;right:10px;
+  width:22px;height:22px;border-radius:50%;
+  background:rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;color:rgba(255,255,255,.4);
+  transition:background .15s;
+}
+.flip-wrap:hover .fb-close,.flip-wrap.flipped .fb-close{background:rgba(255,255,255,.18);}
+
+/* ── DIVIDER ── */
+.rule{border:none;border-top:1px solid var(--border);max-width:1200px;margin:0 auto;}
+
+/* ── CTA ── */
+.cta{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
+  padding:5rem 2rem;text-align:center;margin-top:4rem;
+  position:relative;overflow:hidden;
+}
+.cta::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 80% at 50% 110%,rgba(4,107,210,.3),transparent);
+}
+.cta-in{position:relative;z-index:1;}
+.cta h2{
+  font-family:var(--fh);font-size:clamp(1.8rem,4vw,2.6rem);
+  font-weight:700;color:white;margin-bottom:.7rem;line-height:1.2;
+}
+.cta p{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.6);max-width:420px;margin:0 auto 2rem;line-height:1.75;}
+.cta-btn{
+  display:inline-block;background:var(--blue);color:white;
+  padding:.85rem 2.2rem;border-radius:6px;
+  font-size:.88rem;font-weight:500;text-decoration:none;
+  border:2px solid rgba(255,255,255,.12);
+  box-shadow:0 6px 20px rgba(4,107,210,.4);
+  transition:background .15s,transform .15s;
+}
+.cta-btn:hover{background:#0578e8;transform:translateY(-2px);}
+
+/* ── FOOTER ── */
+.footer{background:var(--ink);padding:3rem 2rem 2rem;}
+.footer-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;
+  padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.07);
+}
+.f-name{font-family:var(--fh);font-size:1.2rem;font-weight:700;color:white;margin-bottom:.3rem;}
+.f-tag{font-size:.75rem;color:rgba(255,255,255,.4);margin-bottom:.9rem;}
+.f-contact{font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.9;}
+.f-contact a{color:rgba(255,255,255,.55);text-decoration:none;}
+.f-contact a:hover{color:white;}
+.f-col h4{font-family:var(--fh);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:white;margin-bottom:.8rem;}
+.f-col ul{list-style:none;}
+.f-col li{margin-bottom:.45rem;}
+.f-col a{font-size:.78rem;color:rgba(255,255,255,.45);text-decoration:none;transition:color .15s;}
+.f-col a:hover{color:white;}
+.f-bottom{max-width:1200px;margin:1.4rem auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-size:.72rem;color:rgba(255,255,255,.28);}
+.f-bottom a{color:rgba(255,255,255,.38);text-decoration:none;}
+.f-bottom a:hover{color:white;}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}
+.reveal.d1{transition-delay:.07s;}.reveal.d2{transition-delay:.14s;}
+.reveal.d3{transition-delay:.21s;}.reveal.d4{transition-delay:.28s;}
+.reveal.d5{transition-delay:.35s;}
+.reveal.show{opacity:1;transform:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  .nav-links{display:none;}
+  .dept-bar{top:0;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:520px){
+  .wrap{padding:0 1rem;}
+  .grid-lg{grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:14px;}
+  .grid-sm{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;}
+  .flip-wrap{height:270px;}
+  .grid-sm .flip-wrap{height:240px;}
+  .b-stats{flex-direction:column;}
+  .b-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.09);}
+  .b-stat:last-child{border-bottom:none;}
+  .footer-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="https://litos.co.in" class="nav-brand">LITOS<span>Rekindle your mind</span></a>
+    <nav class="nav-links">
+      <a href="https://litos.co.in/">Home</a>
+      <a href="https://litos.co.in/services/">Services</a>
+      <a href="https://litos.co.in/about-us/">About Us</a>
+      <a href="https://litos.co.in/blog/">Blog</a>
+      <a href="https://litos.co.in/contact/" class="btn">Schedule a Call</a>
+    </nav>
+  </div>
+</header>
+
+<!-- BANNER -->
+<section class="banner">
+  <div class="banner-inner">
+    <div class="banner-chip">Our Team</div>
+    <h1>The Experts Behind Litos</h1>
+    <p>Hover or tap any card to discover each person's skills, tools, and expertise.</p>
+    <div class="b-stats">
+      <div class="b-stat"><div class="b-num">85+</div><div class="b-lbl">Yrs Combined Exp.</div></div>
+      <div class="b-stat"><div class="b-num">2800+</div><div class="b-lbl">Lives Empowered</div></div>
+      <div class="b-stat"><div class="b-num">255+</div><div class="b-lbl">Companies Advised</div></div>
+      <div class="b-stat"><div class="b-num">11</div><div class="b-lbl">Team Members</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPT TABS -->
+<div class="dept-bar">
+  <div class="dept-inner" id="dept-nav">
+    <a href="#leadership" class="d-tab on">Leadership</a>
+    <a href="#hr"         class="d-tab">People &amp; Culture</a>
+    <a href="#ai"         class="d-tab">AI &amp; Automation</a>
+    <a href="#video"      class="d-tab">Video &amp; Ads</a>
+    <a href="#web"        class="d-tab">Web Development</a>
+  </div>
+</div>
+
+
+<!-- ═══════════ LEADERSHIP ═══════════ -->
+<section id="leadership">
+  <div class="wrap">
+    <div class="section">
+      <div class="sec-hd reveal">
+        <h2>Leadership</h2>
+        <p>Driving Litos's vision, strategy, and culture from the front.</p>
+      </div>
+
+      <div class="grid-lg">
+
+        <!-- CEO: Dr. Beena Pinto -->
+        <div class="flip-wrap reveal d1" tabindex="0" role="button" aria-label="Dr. Beena Pinto - tap for more info">
+          <div class="flip-inner">
+            <!-- FRONT -->
+            <div class="flip-front">
+              <div class="ff-photo">
+                <img src="https://litos.co.in/wp-content/uploads/2023/04/B-.jpg" alt="Dr. Beena Pinto"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="ff-initials" style="display:none;">BP</div>
+                <div class="ff-hint">Tap to explore</div>
+              </div>
+              <div class="ff-info">
+                <div class="ff-name">Dr. Beena Pinto</div>
+                <div class="ff-role">Founder &amp; CEO</div>
+              </div>
+            </div>
+            <!-- BACK -->
+            <div class="flip-back">
+              <div class="fb-close">✕</div>
+              <div class="fb-role">Founder &amp; CEO</div>
+              <div class="fb-name">Dr. Beena Pinto</div>
+              <div class="fb-bio">20+ years in corporate leadership. Mindfulness Coach, Business Consultant, and serial founder of Litos, Anibee Preschools &amp; Gilbee Spices. Winner — eMERG Woman Achiever Award 2023.</div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Expertise</div>
+                <div class="fb-tags">
+                  <span class="fb-tag">Mindfulness Coaching</span>
+                  <span class="fb-tag">Business Consulting</span>
+                  <span class="fb-tag">Corporate Strategy</span>
+                  <span class="fb-tag">Executive Leadership</span>
+                </div>
+              </div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Tools &amp; Methods</div>
+                <div class="fb-tags">
+                  <span class="fb-tag tool">SMART Goals</span>
+                  <span class="fb-tag tool">NLP</span>
+                  <span class="fb-tag tool">Mindfulness Frameworks</span>
+                </div>
+              </div>
+              <a href="https://litos.co.in/about-us/" class="fb-li">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                View Full Profile
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CMO: Mradula -->
+        <div class="flip-wrap reveal d2" tabindex="0" role="button" aria-label="Mradula - tap for more info">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="ff-photo">
+                <div class="ff-initials">MR</div>
+                <div class="ff-hint">Tap to explore</div>
+              </div>
+              <div class="ff-info">
+                <div class="ff-name">Mradula</div>
+                <div class="ff-role">Chief Marketing Officer</div>
+              </div>
+            </div>
+            <div class="flip-back">
+              <div class="fb-close">✕</div>
+              <div class="fb-role">CMO</div>
+              <div class="fb-name">Mradula</div>
+              <div class="fb-bio">Ex-Google brand strategist and growth leader. Shapes Litos's voice, market positioning, and all digital campaigns — turning complex services into stories that resonate.</div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Expertise</div>
+                <div class="fb-tags">
+                  <span class="fb-tag">Brand Strategy</span>
+                  <span class="fb-tag">Digital Marketing</span>
+                  <span class="fb-tag">Growth Campaigns</span>
+                  <span class="fb-tag">Positioning</span>
+                </div>
+              </div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Tools</div>
+                <div class="fb-tags">
+                  <span class="fb-tag tool">Google Ads</span>
+                  <span class="fb-tag tool">HubSpot</span>
+                  <span class="fb-tag tool">Semrush</span>
+                  <span class="fb-tag tool">Analytics</span>
+                </div>
+              </div>
+              <a href="#" class="fb-li">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                Connect on LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════════ PEOPLE & CULTURE ═══════════ -->
+<section id="hr">
+  <div class="wrap">
+    <div class="section">
+      <div class="sec-hd reveal">
+        <h2>People &amp; Culture</h2>
+        <p>Building the team that makes great work possible.</p>
+      </div>
+      <div class="grid-sm grid-xs">
+
+        <div class="flip-wrap reveal d1" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="ff-photo"><div class="ff-initials">SN</div><div class="ff-hint">Tap</div></div>
+              <div class="ff-info"><div class="ff-name">Simran Nair</div><div class="ff-role">HR Lead</div></div>
+            </div>
+            <div class="flip-back">
+              <div class="fb-close">✕</div>
+              <div class="fb-role">HR Lead</div>
+              <div class="fb-name">Simran Nair</div>
+              <div class="fb-bio">Oversees talent acquisition, team wellbeing, and culture initiatives. Ensures Litos attracts and retains the best people.</div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Expertise</div>
+                <div class="fb-tags">
+                  <span class="fb-tag">Recruitment</span>
+                  <span class="fb-tag">People Ops</span>
+                  <span class="fb-tag">Culture Building</span>
+                  <span class="fb-tag">Team Wellbeing</span>
+                </div>
+              </div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Tools</div>
+                <div class="fb-tags">
+                  <span class="fb-tag tool">Zoho HR</span>
+                  <span class="fb-tag tool">LinkedIn Recruiter</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════════ AI & AUTOMATION ═══════════ -->
+<section id="ai">
+  <div class="wrap">
+    <div class="section">
+      <div class="sec-hd reveal">
+        <h2>AI &amp; Automation</h2>
+        <p>Powering smarter operations and intelligent service delivery.</p>
+      </div>
+      <div class="grid-sm">
+
+        <div class="flip-wrap reveal d1" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="ff-photo"><div class="ff-initials">AK</div><div class="ff-hint">Tap</div></div>
+              <div class="ff-info"><div class="ff-name">Arjun Krish</div><div class="ff-role">AI Engineer</div></div>
+            </div>
+            <div class="flip-back">
+              <div class="fb-close">✕</div>
+              <div class="fb-role">AI Engineer</div>
+              <div class="fb-name">Arjun Krish</div>
+              <div class="fb-bio">Builds the intelligent systems behind Litos — from LLM fine-tuning to NLP pipelines that power smarter, faster service delivery.</div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Expertise</div>
+                <div class="fb-tags">
+                  <span class="fb-tag">LLM Fine-tuning</span>
+                  <span class="fb-tag">NLP</span>
+                  <span class="fb-tag">Computer Vision</span>
+                </div>
+              </div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Tools</div>
+                <div class="fb-tags">
+                  <span class="fb-tag tool">Python</span>
+                  <span class="fb-tag tool">TensorFlow</span>
+                  <span class="fb-tag tool">HuggingFace</span>
+                  <span class="fb-tag tool">LangChain</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-wrap reveal d2" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="ff-photo"><div class="ff-initials">PV</div><div class="ff-hint">Tap</div></div>
+              <div class="ff-info"><div class="ff-name">Priya Venkat</div><div class="ff-role">Automation Lead</div></div>
+            </div>
+            <div class="flip-back">
+              <div class="fb-close">✕</div>
+              <div class="fb-role">Automation Lead</div>
+              <div class="fb-name">Priya Venkat</div>
+              <div class="fb-bio">Designs intelligent RPA workflows and AI agents that eliminate repetitive tasks and scale operational capacity for Litos clients.</div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Expertise</div>
+                <div class="fb-tags">
+                  <span class="fb-tag">RPA Design</span>
+                  <span class="fb-tag">AI Agents</span>
+                  <span class="fb-tag">Workflow Optimization</span>
+                </div>
+              </div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Tools</div>
+                <div class="fb-tags">
+                  <span class="fb-tag tool">UiPath</span>
+                  <span class="fb-tag tool">Make.com</span>
+                  <span class="fb-tag tool">Zapier</span>
+                  <span class="fb-tag tool">n8n</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════════ VIDEO & ADS ═══════════ -->
+<section id="video">
+  <div class="wrap">
+    <div class="section">
+      <div class="sec-hd reveal">
+        <h2>Video &amp; Advertising</h2>
+        <p>Crafting compelling visual content and high-performance ad campaigns.</p>
+      </div>
+      <div class="grid-sm">
+
+        <div class="flip-wrap reveal d1" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="ff-photo"><div class="ff-initials">RJ</div><div class="ff-hint">Tap</div></div>
+              <div class="ff-info"><div class="ff-name">Rahul Jain</div><div class="ff-role">Senior Video Editor</div></div>
+            </div>
+            <div class="flip-back">
+              <div class="fb-close">✕</div>
+              <div class="fb-role">Senior Video Editor</div>
+              <div class="fb-name">Rahul Jain</div>
+              <div class="fb-bio">10+ years in post-production and digital advertising. Expert eye for pacing, motion graphics, and storytelling through video.</div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Expertise</div>
+                <div class="fb-tags">
+                  <span class="fb-tag">Post-Production</span>
+                  <span class="fb-tag">Motion Graphics</span>
+                  <span class="fb-tag">Color Grading</span>
+                </div>
+              </div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Tools</div>
+                <div class="fb-tags">
+                  <span class="fb-tag tool">After Effects</span>
+                  <span class="fb-tag tool">Premiere Pro</span>
+                  <span class="fb-tag tool">DaVinci Resolve</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-wrap reveal d2" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="ff-photo"><div class="ff-initials">SK</div><div class="ff-hint">Tap</div></div>
+              <div class="ff-info"><div class="ff-name">Shreya Kulkarni</div><div class="ff-role">Creative Producer</div></div>
+            </div>
+            <div class="flip-back">
+              <div class="fb-close">✕</div>
+              <div class="fb-role">Creative Producer</div>
+              <div class="fb-name">Shreya Kulkarni</div>
+              <div class="fb-bio">Leads concept development and brand storytelling from brief to final cut. Ensures every campaign frame serves the message.</div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Expertise</div>
+                <div class="fb-tags">
+                  <span class="fb-tag">Concept Dev</span>
+                  <span class="fb-tag">Storyboarding</span>
+                  <span class="fb-tag">Campaign Direction</span>
+                </div>
+              </div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Tools</div>
+                <div class="fb-tags">
+                  <span class="fb-tag tool">Figma</span>
+                  <span class="fb-tag tool">CapCut</span>
+                  <span class="fb-tag tool">Canva Pro</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-wrap reveal d3" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="ff-photo"><div class="ff-initials">AM</div><div class="ff-hint">Tap</div></div>
+              <div class="ff-info"><div class="ff-name">Ankit Mishra</div><div class="ff-role">Motion Designer</div></div>
+            </div>
+            <div class="flip-back">
+              <div class="fb-close">✕</div>
+              <div class="fb-role">Motion Designer</div>
+              <div class="fb-name">Ankit Mishra</div>
+              <div class="fb-bio">Creates 2D/3D animations and explainer videos that simplify complex ideas into visually engaging stories.</div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Expertise</div>
+                <div class="fb-tags">
+                  <span class="fb-tag">2D Animation</span>
+                  <span class="fb-tag">3D Modeling</span>
+                  <span class="fb-tag">Explainer Videos</span>
+                </div>
+              </div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Tools</div>
+                <div class="fb-tags">
+                  <span class="fb-tag tool">Cinema 4D</span>
+                  <span class="fb-tag tool">Blender</span>
+                  <span class="fb-tag tool">After Effects</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-wrap reveal d4" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="ff-photo"><div class="ff-initials">NT</div><div class="ff-hint">Tap</div></div>
+              <div class="ff-info"><div class="ff-name">Neha Thakur</div><div class="ff-role">Ads Manager</div></div>
+            </div>
+            <div class="flip-back">
+              <div class="fb-close">✕</div>
+              <div class="fb-role">Ads Manager</div>
+              <div class="fb-name">Neha Thakur</div>
+              <div class="fb-bio">Manages Meta and Google campaigns end-to-end, optimizing performance creatives for maximum ROAS through systematic A/B testing.</div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Expertise</div>
+                <div class="fb-tags">
+                  <span class="fb-tag">Paid Media</span>
+                  <span class="fb-tag">A/B Testing</span>
+                  <span class="fb-tag">ROAS Optimization</span>
+                </div>
+              </div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Tools</div>
+                <div class="fb-tags">
+                  <span class="fb-tag tool">Meta Ads</span>
+                  <span class="fb-tag tool">Google Ads</span>
+                  <span class="fb-tag tool">Meta Business Suite</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-wrap reveal d5" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="ff-photo"><div class="ff-initials">VP</div><div class="ff-hint">Tap</div></div>
+              <div class="ff-info"><div class="ff-name">Varun P</div><div class="ff-role">Video Editor</div></div>
+            </div>
+            <div class="flip-back">
+              <div class="fb-close">✕</div>
+              <div class="fb-role">Video Editor</div>
+              <div class="fb-name">Varun P</div>
+              <div class="fb-bio">Specializes in high-energy short-form content — Reels, Shorts, and social-first edits built to stop the scroll and drive engagement.</div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Expertise</div>
+                <div class="fb-tags">
+                  <span class="fb-tag">Short-Form Video</span>
+                  <span class="fb-tag">Reels / Shorts</span>
+                  <span class="fb-tag">Social Content</span>
+                </div>
+              </div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Tools</div>
+                <div class="fb-tags">
+                  <span class="fb-tag tool">CapCut</span>
+                  <span class="fb-tag tool">Premiere Pro</span>
+                  <span class="fb-tag tool">VN Editor</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════════ WEB DEVELOPMENT ═══════════ -->
+<section id="web">
+  <div class="wrap">
+    <div class="section" style="padding-bottom:4rem;">
+      <div class="sec-hd reveal">
+        <h2>Web Development</h2>
+        <p>Building the digital foundation Litos stands on.</p>
+      </div>
+      <div class="grid-sm grid-xs">
+
+        <div class="flip-wrap reveal d1" tabindex="0" role="button">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="ff-photo"><div class="ff-initials">AS</div><div class="ff-hint">Tap</div></div>
+              <div class="ff-info"><div class="ff-name">Anand Singh</div><div class="ff-role">Web Developer</div></div>
+            </div>
+            <div class="flip-back">
+              <div class="fb-close">✕</div>
+              <div class="fb-role">Web Developer</div>
+              <div class="fb-name">Anand Singh</div>
+              <div class="fb-bio">The architect behind litos.co.in — building fast, accessible, and SEO-optimized WordPress experiences that perform on every device.</div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Expertise</div>
+                <div class="fb-tags">
+                  <span class="fb-tag">WordPress Dev</span>
+                  <span class="fb-tag">Page Speed</span>
+                  <span class="fb-tag">SEO Optimization</span>
+                  <span class="fb-tag">Responsive Design</span>
+                </div>
+              </div>
+              <div class="fb-section">
+                <div class="fb-section-lbl">Tools</div>
+                <div class="fb-tags">
+                  <span class="fb-tag tool">Elementor</span>
+                  <span class="fb-tag tool">WooCommerce</span>
+                  <span class="fb-tag tool">Yoast SEO</span>
+                  <span class="fb-tag tool">GTmetrix</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <h2>Ready to Transform Your Business?</h2>
+    <p>Schedule a complimentary call with our team and discover how Litos can help you grow.</p>
+    <a href="https://litos.co.in/contact/" class="cta-btn">Schedule Your Complimentary Call Now</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="f-name">LITOS</div>
+      <div class="f-tag">Rekindle your mind</div>
+      <div class="f-contact">
+        Your partner in prosperity, fostering success<br>in every aspect of corporate life and business.<br><br>
+        <a href="mailto:support@litos.co.in">support@litos.co.in</a><br>
+        <a href="tel:+917019452571">+91 70194 52571</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="https://litos.co.in/">Home</a></li>
+        <li><a href="https://litos.co.in/about-us/">About Us</a></li>
+        <li><a href="https://litos.co.in/services/">Services</a></li>
+        <li><a href="https://litos.co.in/blog/">Blog</a></li>
+        <li><a href="https://litos.co.in/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="https://litos.co.in/coaching-and-counseling/">Coaching &amp; Counseling</a></li>
+        <li><a href="https://litos.co.in/corporate-training/">Corporate Training</a></li>
+        <li><a href="https://litos.co.in/marketing-and-business-development/">Marketing &amp; Business Dev</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <span>© 2026 Copyright LITOS — Rekindle your mind. All rights reserved.</span>
+    <span>
+      <a href="https://litos.co.in/privacy-policy/">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="https://litos.co.in/terms-and-conditions/">Terms &amp; Conditions</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('show'); obs.unobserve(e.target); } });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Dept tab active on scroll
+const ids = ['leadership','hr','ai','video','web'];
+const tabs = document.querySelectorAll('.d-tab');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if(el && window.scrollY >= el.offsetTop - 160) cur = id;
+  });
+  tabs.forEach(t => t.classList.toggle('on', t.getAttribute('href') === '#' + cur));
+}, { passive: true });
+
+// Tap / click to flip on mobile
+document.querySelectorAll('.flip-wrap').forEach(card => {
+  card.addEventListener('click', () => {
+    // on touch device, toggle flipped class
+    if(window.matchMedia('(hover: none)').matches) {
+      card.classList.toggle('flipped');
+    }
+  });
+  // keyboard support
+  card.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      card.classList.toggle('flipped');
+    }
+  });
+});
+</script>
+</body>
+</html>
