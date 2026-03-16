@@ -1,550 +1,377 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-/* ── LITOS TEAM WIDGET — paste into Elementor HTML widget ── */
-.lt-wrap *,.lt-wrap *::before,.lt-wrap *::after{box-sizing:border-box;}
-.lt-wrap{
-  font-family:'Roboto',sans-serif;
-  color:#3d3d3d;
-  font-size:15px;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
+:root{
+  --bl:   #046bd2;
+  --bl2:  #0358b0;
+  --bl3:  #003b72;
+  --blbg: #f0f6ff;
+  --org:  #f97316;
+  --wh:   #ffffff;
+  --off:  #f4f8fd;
+  --ink:  #1a1a2e;
+  --bdy:  #3d3d3d;
+  --mid:  #5a6a80;
+  --bdr:  #d6e4f0;
+  --fh:   'Roboto Slab',Georgia,serif;
+  --fb:   'Roboto',sans-serif;
+  --max:  1200px;
 }
-/* scoped vars */
-.lt-wrap{
-  --bl:#046bd2;--bl2:#0358b0;--bl3:#003b72;
-  --blbg:#f0f6ff;--org:#f97316;
-  --wh:#ffffff;--off:#f4f8fd;
-  --ink:#1a1a2e;--mid:#5a6a80;--bdr:#d6e4f0;
-  --fh:'Roboto Slab',Georgia,serif;
-}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 
 /* ── HERO ── */
-.lt-hero{
-  background:linear-gradient(110deg,var(--bl3) 0%,var(--bl) 55%,#1d7fd4 100%);
-  padding:52px 0 44px;position:relative;overflow:hidden;margin-bottom:0;
-}
-.lt-hero::after{
-  content:'';position:absolute;inset:0;
-  background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.04'%3E%3Cpath d='M0 0h20v20H0zm20 20h20v20H20z'/%3E%3C/g%3E%3C/svg%3E");
-  pointer-events:none;
-}
-.lt-hero-in{
-  position:relative;z-index:1;
-  display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;
-}
-.lt-hero-txt{flex:1;min-width:240px;}
-.lt-chip{
-  display:inline-block;background:rgba(255,255,255,.11);
-  border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.82);
-  font-size:.6rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;
-  padding:.22rem .9rem;border-radius:40px;margin-bottom:.9rem;
-}
-.lt-hero h1{
-  font-family:var(--fh);font-size:clamp(1.75rem,4vw,2.8rem);
-  font-weight:700;color:#fff;line-height:1.2;margin:0 0 .75rem;
-}
-.lt-hero h1 span{color:#7ec8ff;}
-.lt-hero-sub{
-  font-size:.88rem;font-weight:300;color:rgba(255,255,255,.68);
-  max-width:420px;line-height:1.7;margin:0 0 1.6rem;
-}
-.lt-hero-cta{
-  display:inline-block;background:var(--org);color:#fff;
-  padding:.65rem 1.6rem;border-radius:5px;
-  font-size:.83rem;font-weight:600;text-decoration:none;
-  box-shadow:0 4px 14px rgba(249,115,22,.4);
-  transition:background .15s,transform .15s;
-  font-family:var(--fb);
-}
-.lt-hero-cta:hover{background:#ea6c0a;transform:translateY(-2px);color:#fff;}
-
-/* stats box */
-.lt-hstats{
-  display:grid;grid-template-columns:1fr 1fr;gap:1px;
-  background:rgba(255,255,255,.11);border-radius:10px;
-  overflow:hidden;border:1px solid rgba(255,255,255,.13);
-  flex-shrink:0;width:260px;
-}
-.lt-hs{background:rgba(255,255,255,.05);padding:.9rem 1rem;text-align:center;}
-.lt-hs-n{font-family:var(--fh);font-size:1.55rem;font-weight:700;color:#fff;line-height:1;}
-.lt-hs-l{font-size:.58rem;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.48);margin-top:3px;}
+.hero{background:linear-gradient(110deg,var(--bl3) 0%,var(--bl) 55%,#1d7fd4 100%);padding:48px 24px 40px;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.04'%3E%3Cpath d='M0 0h20v20H0zm20 20h20v20H20z'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
+.hero-in{max-width:var(--max);margin:0 auto;display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;position:relative;z-index:1;}
+.hero-txt{flex:1;min-width:240px;}
+.hchip{display:inline-block;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.8);font-size:.6rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;padding:.22rem .85rem;border-radius:40px;margin-bottom:.9rem;font-family:var(--fb);}
+.hero h1{font-family:var(--fh);font-size:clamp(1.7rem,4vw,2.6rem);font-weight:700;color:#fff;line-height:1.2;margin-bottom:.7rem;}
+.hero h1 span{color:#7ec8ff;}
+.hero-sub{font-size:.87rem;font-weight:300;color:rgba(255,255,255,.68);max-width:400px;line-height:1.65;font-family:var(--fb);}
+.hstats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.11);border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.13);flex-shrink:0;width:260px;}
+.hs{background:rgba(255,255,255,.05);padding:.85rem 1rem;text-align:center;}
+.hs-n{font-family:var(--fh);font-size:1.5rem;font-weight:700;color:#fff;line-height:1;}
+.hs-l{font-size:.58rem;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.48);margin-top:3px;font-family:var(--fb);}
 
 /* ── DEPT TABS ── */
-.lt-tabs{background:var(--off);border-bottom:2px solid var(--bdr);margin-bottom:0;}
-.lt-tabs-in{display:flex;gap:.3rem;flex-wrap:wrap;padding:.55rem 0;}
-.lt-tab{font-size:.71rem;font-weight:500;padding:.3rem .8rem;border-radius:4px;border:1px solid var(--bdr);background:var(--wh);color:var(--mid);text-decoration:none;transition:all .14s;white-space:nowrap;cursor:pointer;}
-.lt-tab:hover,.lt-tab.on{background:var(--bl);border-color:var(--bl);color:#fff;}
+.dtabs{background:var(--off);border-bottom:2px solid var(--bdr);}
+.dtabs-in{max-width:var(--max);margin:0 auto;padding:.55rem 24px;display:flex;gap:.3rem;flex-wrap:wrap;}
+.dtab{font-size:.71rem;font-weight:500;padding:.3rem .8rem;border-radius:4px;border:1px solid var(--bdr);background:var(--wh);color:var(--mid);text-decoration:none;transition:all .14s;white-space:nowrap;font-family:var(--fb);cursor:pointer;}
+.dtab:hover,.dtab.on{background:var(--bl);border-color:var(--bl);color:#fff;}
 
-/* ── DEPT SECTION ── */
-.lt-dept{padding:30px 0 26px;}
-.lt-dept:nth-child(odd){background:var(--wh);}
-.lt-dept:nth-child(even){background:var(--off);}
-
-/* section heading */
-.lt-sec-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:11px;border-bottom:2px solid var(--bdr);gap:1rem;flex-wrap:wrap;}
-.lt-sec-hd h3{font-family:var(--fh);font-size:1.2rem;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:9px;margin:0;}
-.lt-sec-hd h3::before{content:'';display:inline-block;width:4px;height:18px;background:var(--bl);border-radius:2px;flex-shrink:0;}
-.lt-sec-sub{font-size:.75rem;color:var(--mid);margin-top:3px;padding-left:13px;}
-.lt-badge{background:var(--blbg);color:var(--bl2);font-size:.62rem;font-weight:600;padding:.2rem .7rem;border-radius:4px;border:1px solid rgba(4,107,210,.15);white-space:nowrap;}
+/* ── DEPT SECTIONS ── */
+.dept{padding:36px 0 32px;}
+.dept:nth-child(odd){background:var(--wh);}
+.dept:nth-child(even){background:var(--off);}
+.sec-in{max-width:var(--max);margin:0 auto;padding:0 24px;}
+.sec-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--bdr);gap:1rem;flex-wrap:wrap;}
+.sec-hd-l h2{font-family:var(--fh);font-size:1.3rem;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px;}
+.sec-hd-l h2::before{content:'';display:inline-block;width:4px;height:20px;background:var(--bl);border-radius:2px;flex-shrink:0;}
+.sec-hd-l p{font-size:.77rem;color:var(--mid);margin-top:3px;padding-left:14px;font-family:var(--fb);}
+.sec-badge{background:var(--blbg);color:var(--bl2);font-size:.62rem;font-weight:600;padding:.2rem .7rem;border-radius:4px;border:1px solid rgba(4,107,210,.15);font-family:var(--fb);}
 
 /* ── TEAM GRID ── */
-.lt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:14px;}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;}
 
 /* ── TEAM CARD ── */
-.lt-card{
-  background:var(--wh);border:1px solid var(--bdr);border-radius:10px;
-  overflow:hidden;cursor:pointer;position:relative;
-  transition:transform .2s,box-shadow .2s,border-color .2s;
-  box-shadow:0 2px 8px rgba(4,107,210,.05);
-}
-.lt-dept:nth-child(even) .lt-card{background:var(--wh);}
-.lt-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(4,107,210,.15);border-color:var(--bl);}
-
-.lt-photo{
-  height:155px;
-  background:linear-gradient(145deg,var(--blbg),#d8eaf9);
-  display:flex;align-items:center;justify-content:center;
-  position:relative;overflow:hidden;
-}
-.lt-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
-.lt-init{
-  width:68px;height:68px;border-radius:50%;
-  background:linear-gradient(135deg,var(--bl3),var(--bl));
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--fh);font-size:1.4rem;font-weight:700;color:#fff;
-  box-shadow:0 5px 16px rgba(4,107,210,.3);
-  transition:transform .2s;
-}
-.lt-card:hover .lt-init{transform:scale(1.06);}
-
-.lt-ov{
-  position:absolute;inset:0;
-  background:rgba(4,107,210,.82);
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;transition:opacity .2s;
-}
-.lt-card:hover .lt-ov{opacity:1;}
-.lt-ov span{
-  color:#fff;font-size:.68rem;font-weight:600;letter-spacing:1.5px;
-  text-transform:uppercase;border:1px solid rgba(255,255,255,.5);
-  padding:.28rem .8rem;border-radius:4px;
-}
-.lt-strip{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--bl);}
-.lt-info{padding:.7rem .85rem;background:var(--wh);}
-.lt-name{font-family:var(--fh);font-size:.9rem;font-weight:700;color:var(--ink);line-height:1.2;margin:0 0 2px;}
-.lt-role{font-size:.58rem;font-weight:600;text-transform:uppercase;letter-spacing:1.6px;color:var(--bl);}
+.tcard{background:var(--wh);border:1px solid var(--bdr);border-radius:10px;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s;box-shadow:0 2px 8px rgba(4,107,210,.05);position:relative;}
+.dept:nth-child(even) .tcard{background:var(--wh);}
+.tcard:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(4,107,210,.15);border-color:var(--bl);}
+.tcard:focus{outline:2px solid var(--bl);outline-offset:2px;}
+.tc-photo{height:160px;background:linear-gradient(145deg,var(--blbg) 0%,#d8eaf9 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.tc-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
+.tc-init{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--bl3),var(--bl));display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:1.5rem;font-weight:700;color:#fff;box-shadow:0 5px 16px rgba(4,107,210,.3);transition:transform .2s;}
+.tcard:hover .tc-init{transform:scale(1.06);}
+.tc-overlay{position:absolute;inset:0;background:rgba(4,107,210,.82);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;}
+.tcard:hover .tc-overlay{opacity:1;}
+.tc-overlay span{color:#fff;font-size:.72rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:.3rem .9rem;border-radius:4px;font-family:var(--fb);}
+.tc-strip{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--bl);}
+.tc-info{padding:.75rem .9rem;background:var(--wh);}
+.tc-name{font-family:var(--fh);font-size:.95rem;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:2px;}
+.tc-role{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:1.6px;color:var(--bl);font-family:var(--fb);}
 
 /* ── MODAL ── */
-.lt-modal{
-  display:none;position:fixed;inset:0;z-index:99999;
-  align-items:center;justify-content:center;padding:16px;
-}
-.lt-modal.open{display:flex;}
-.lt-mbg{
-  position:absolute;inset:0;
-  background:rgba(0,20,50,.65);
-  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
-  animation:ltBgIn .22s ease both;
-}
-@keyframes ltBgIn{from{opacity:0;}to{opacity:1;}}
-.lt-mbox{
-  position:relative;z-index:1;
-  background:var(--wh);border-radius:14px;
-  width:100%;max-width:660px;max-height:90vh;
-  overflow:hidden;display:flex;flex-direction:column;
-  box-shadow:0 28px 72px rgba(0,20,50,.35);
-  animation:ltBoxIn .26s cubic-bezier(.22,1,.36,1) both;
-}
-@keyframes ltBoxIn{from{opacity:0;transform:translateY(22px) scale(.97);}to{opacity:1;transform:none;}}
-
-/* modal header */
-.lt-mhead{
-  background:linear-gradient(110deg,var(--bl3),var(--bl));
-  padding:24px 24px 0;display:flex;align-items:flex-end;gap:18px;
-  position:relative;overflow:hidden;flex-shrink:0;
-}
-.lt-mhead::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.04'%3E%3Cpath d='M0 0h20v20H0zm20 20h20v20H20z'/%3E%3C/g%3E%3C/svg%3E");}
-.lt-mav{
-  width:88px;height:88px;border-radius:10px;overflow:hidden;flex-shrink:0;
-  border:3px solid rgba(255,255,255,.22);
-  background:rgba(255,255,255,.1);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--fh);font-size:2rem;font-weight:700;color:#fff;
-  position:relative;z-index:1;margin-bottom:-1px;
-}
-.lt-mav img{width:100%;height:100%;object-fit:cover;object-position:top;}
-.lt-mhtxt{position:relative;z-index:1;padding-bottom:16px;flex:1;min-width:0;}
-.lt-mdept{font-size:.58rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:3px;}
-.lt-mname{font-family:var(--fh);font-size:1.45rem;font-weight:700;color:#fff;line-height:1.15;margin-bottom:3px;}
-.lt-mrole{font-size:.68rem;font-weight:500;text-transform:uppercase;letter-spacing:1.8px;color:rgba(255,255,255,.68);}
-
-/* close btn */
-.lt-mclose{
-  position:absolute;top:12px;right:12px;z-index:2;
-  width:28px;height:28px;border-radius:50%;
-  background:rgba(255,255,255,.12);border:none;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,.7);font-size:.95rem;line-height:1;
-  transition:background .14s;font-family:sans-serif;
-}
-.lt-mclose:hover{background:rgba(255,255,255,.22);}
-
-/* modal body */
-.lt-mbody{padding:22px 24px 26px;overflow-y:auto;flex:1;}
-.lt-mbio{font-size:.88rem;color:#3d3d3d;line-height:1.75;padding-left:12px;border-left:3px solid var(--bl);margin-bottom:18px;}
-
-.lt-msecs{display:flex;flex-direction:column;gap:14px;}
-.lt-mslbl{font-size:.6rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);margin-bottom:7px;display:flex;align-items:center;gap:6px;}
-.lt-mslbl::after{content:'';flex:1;height:1px;background:var(--bdr);}
-.lt-mtags{display:flex;flex-wrap:wrap;gap:5px;}
-.lt-mtag{font-size:.72rem;font-weight:500;padding:.22rem .7rem;border-radius:4px;background:var(--blbg);border:1px solid rgba(4,107,210,.15);color:var(--bl2);}
-.lt-mtag.t{background:rgba(4,107,210,.06);border-color:rgba(4,107,210,.22);color:var(--bl);}
-.lt-mtag.a{background:#fff7ed;border-color:rgba(249,115,22,.22);color:#c2410c;}
-
-/* modal actions */
-.lt-mact{display:flex;align-items:center;gap:8px;margin-top:18px;padding-top:14px;border-top:1px solid var(--bdr);flex-wrap:wrap;}
-.lt-mli{display:inline-flex;align-items:center;gap:5px;font-size:.76rem;font-weight:500;color:var(--bl);text-decoration:none;padding:.38rem .85rem;border:1px solid rgba(4,107,210,.28);border-radius:4px;transition:all .14s;}
-.lt-mli:hover{background:var(--blbg);}
-.lt-mli svg{width:13px;height:13px;flex-shrink:0;}
-.lt-mdtag{font-size:.65rem;font-weight:600;padding:.28rem .8rem;border-radius:4px;background:var(--blbg);color:var(--bl2);border:1px solid rgba(4,107,210,.15);margin-left:auto;}
-.lt-mnav{display:flex;gap:5px;}
-.lt-mbtn{width:28px;height:28px;border-radius:50%;background:var(--blbg);border:1px solid var(--bdr);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--bl);font-size:.8rem;transition:all .14s;font-family:sans-serif;}
-.lt-mbtn:hover{background:var(--bl);color:#fff;border-color:var(--bl);}
-.lt-mbtn:disabled{opacity:.3;cursor:default;pointer-events:none;}
+.modal-wrap{display:none;position:fixed;inset:0;z-index:99999;align-items:center;justify-content:center;padding:20px;}
+.modal-wrap.open{display:flex;}
+.modal-bg{position:absolute;inset:0;background:rgba(0,20,50,.65);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);animation:bgIn .25s ease both;}
+@keyframes bgIn{from{opacity:0;}to{opacity:1;}}
+.modal-box{position:relative;z-index:1;background:var(--wh);border-radius:14px;width:100%;max-width:680px;max-height:88vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 32px 80px rgba(0,20,50,.35);animation:boxIn .28s cubic-bezier(.22,1,.36,1) both;}
+@keyframes boxIn{from{opacity:0;transform:translateY(24px) scale(.97);}to{opacity:1;transform:none;}}
+.modal-head{background:linear-gradient(110deg,var(--bl3),var(--bl));padding:28px 28px 0;display:flex;align-items:flex-end;gap:22px;position:relative;overflow:hidden;flex-shrink:0;}
+.modal-head::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.04'%3E%3Cpath d='M0 0h20v20H0zm20 20h20v20H20z'/%3E%3C/g%3E%3C/svg%3E");}
+.modal-avatar{width:96px;height:96px;border-radius:10px;overflow:hidden;flex-shrink:0;border:3px solid rgba(255,255,255,.25);background:linear-gradient(145deg,rgba(255,255,255,.15),rgba(255,255,255,.05));display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:2.2rem;font-weight:700;color:#fff;position:relative;z-index:1;margin-bottom:-1px;}
+.modal-avatar img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.modal-head-txt{position:relative;z-index:1;padding-bottom:18px;flex:1;}
+.modal-dept{font-size:.6rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:4px;font-family:var(--fb);}
+.modal-name{font-family:var(--fh);font-size:1.55rem;font-weight:700;color:#fff;line-height:1.15;margin-bottom:4px;}
+.modal-role{font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:1.8px;color:rgba(255,255,255,.7);font-family:var(--fb);}
+.modal-close{position:absolute;top:14px;right:14px;z-index:2;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.12);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:1rem;transition:background .15s;font-family:sans-serif;line-height:1;}
+.modal-close:hover{background:rgba(255,255,255,.22);}
+.modal-body{padding:24px 28px 28px;overflow-y:auto;flex:1;}
+.modal-bio{font-size:.9rem;color:var(--bdy);line-height:1.75;padding-left:12px;border-left:3px solid var(--bl);margin-bottom:20px;font-family:var(--fb);}
+.modal-sections{display:flex;flex-direction:column;gap:16px;}
+.msec-title{font-size:.62rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);margin-bottom:8px;display:flex;align-items:center;gap:6px;font-family:var(--fb);}
+.msec-title::after{content:'';flex:1;height:1px;background:var(--bdr);}
+.mtags{display:flex;flex-wrap:wrap;gap:6px;}
+.mtag{font-size:.73rem;font-weight:500;padding:.25rem .75rem;border-radius:4px;background:var(--blbg);border:1px solid rgba(4,107,210,.15);color:var(--bl2);font-family:var(--fb);}
+.mtag.tool{background:rgba(4,107,210,.06);border-color:rgba(4,107,210,.25);color:var(--bl);}
+.mtag.award{background:#fff7ed;border-color:rgba(249,115,22,.25);color:#c2410c;}
+.modal-actions{display:flex;align-items:center;gap:10px;margin-top:20px;padding-top:16px;border-top:1px solid var(--bdr);flex-wrap:wrap;}
+.modal-li{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:500;color:var(--bl);text-decoration:none;padding:.4rem .9rem;border:1px solid rgba(4,107,210,.3);border-radius:4px;transition:all .14s;font-family:var(--fb);}
+.modal-li:hover{background:var(--blbg);}
+.modal-li svg{width:14px;height:14px;}
+.modal-dept-tag{font-size:.68rem;font-weight:600;padding:.3rem .85rem;border-radius:4px;background:var(--blbg);color:var(--bl2);border:1px solid rgba(4,107,210,.15);margin-left:auto;font-family:var(--fb);}
+.modal-nav{display:flex;gap:6px;}
+.mnav-btn{width:30px;height:30px;border-radius:50%;background:var(--blbg);border:1px solid var(--bdr);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--bl);font-size:.85rem;transition:all .14s;font-family:sans-serif;}
+.mnav-btn:hover{background:var(--bl);color:#fff;border-color:var(--bl);}
+.mnav-btn:disabled{opacity:.3;cursor:default;}
 
 /* ── REVEAL ── */
-.lt-rv{opacity:0;transform:translateY(12px);transition:opacity .45s ease,transform .45s ease;}
-.lt-rv.d1{transition-delay:.05s;}.lt-rv.d2{transition-delay:.1s;}.lt-rv.d3{transition-delay:.15s;}
-.lt-rv.d4{transition-delay:.2s;}.lt-rv.d5{transition-delay:.25s;}
-.lt-rv.vis{opacity:1;transform:none;}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .48s ease,transform .48s ease;}
+.rv.d1{transition-delay:.05s;}.rv.d2{transition-delay:.1s;}.rv.d3{transition-delay:.15s;}
+.rv.d4{transition-delay:.2s;}.rv.d5{transition-delay:.25s;}
+.rv.vis{opacity:1;transform:none;}
 
 /* ── RESPONSIVE ── */
-@media(max-width:768px){
-  .lt-hero{padding:36px 0 32px;}
-  .lt-hero-in{flex-direction:column;gap:1.4rem;}
-  .lt-hstats{width:100%;}
-  .lt-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;}
-  .lt-photo{height:130px;}
-  .lt-init{width:58px;height:58px;font-size:1.2rem;}
-  .lt-mhead{padding:18px 18px 0;gap:14px;}
-  .lt-mav{width:70px;height:70px;font-size:1.6rem;}
-  .lt-mname{font-size:1.2rem;}
-  .lt-mbody{padding:16px 18px 20px;}
+@media(max-width:900px){
+  .hero-in{flex-direction:column;gap:1.2rem;}
+  .hstats{width:100%;}
+  .team-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;}
+  .modal-box{max-width:98vw;}
 }
-@media(max-width:480px){
-  .lt-grid{grid-template-columns:repeat(3,1fr);gap:9px;}
-  .lt-photo{height:115px;}
-  .lt-init{width:50px;height:50px;font-size:1rem;}
-  .lt-name{font-size:.82rem;}
-  .lt-info{padding:.55rem .65rem;}
+@media(max-width:600px){
+  .hero{padding:32px 16px 28px;}
+  .sec-in,.dtabs-in{padding-left:16px;padding-right:16px;}
+  .team-grid{grid-template-columns:repeat(3,1fr);gap:10px;}
+  .tc-photo{height:120px;}
+  .tc-init{width:56px;height:56px;font-size:1.2rem;}
+  .tc-name{font-size:.85rem;}
+  .tc-role{font-size:.55rem;}
+  .modal-head{padding:20px 18px 0;gap:14px;}
+  .modal-avatar{width:72px;height:72px;font-size:1.6rem;}
+  .modal-name{font-size:1.25rem;}
+  .modal-body{padding:18px 18px 22px;}
 }
-@media(max-width:340px){
-  .lt-grid{grid-template-columns:repeat(2,1fr);}
+@media(max-width:380px){
+  .team-grid{grid-template-columns:repeat(2,1fr);}
+  .tc-photo{height:130px;}
 }
 </style>
 
-<!-- ══════════════════════════════════════
-     LITOS TEAM WIDGET — HTML starts here
-══════════════════════════════════════ -->
-<div class="lt-wrap">
-
-  <!-- HERO -->
-  <div class="lt-hero">
-    <div class="lt-hero-in">
-      <div class="lt-hero-txt">
-        <div class="lt-chip">Meet the Team</div>
-        <h1>The Experts Behind<br><span>Litos</span></h1>
-        <p class="lt-hero-sub">A dedicated team of coaches, strategists, creators &amp; engineers — united by one purpose: your growth. Click any card to explore each person's full profile.</p>
-        <a href="https://litos.co.in/contact/" class="lt-hero-cta">Schedule a Complimentary Call</a>
-      </div>
-      <div class="lt-hstats">
-        <div class="lt-hs"><div class="lt-hs-n">85+</div><div class="lt-hs-l">Yrs Combined Exp.</div></div>
-        <div class="lt-hs"><div class="lt-hs-n">2800+</div><div class="lt-hs-l">Lives Empowered</div></div>
-        <div class="lt-hs"><div class="lt-hs-n">255+</div><div class="lt-hs-l">Companies Advised</div></div>
-        <div class="lt-hs"><div class="lt-hs-n">11</div><div class="lt-hs-l">Team Members</div></div>
-      </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <div class="hero-txt">
+      <div class="hchip">Our Team</div>
+      <h1>The Experts Behind <span>Litos</span></h1>
+      <p class="hero-sub">Click any card to explore each person's full profile — bio, skills, tools &amp; more.</p>
+    </div>
+    <div class="hstats">
+      <div class="hs"><div class="hs-n">85+</div><div class="hs-l">Yrs Exp.</div></div>
+      <div class="hs"><div class="hs-n">2800+</div><div class="hs-l">Lives Empowered</div></div>
+      <div class="hs"><div class="hs-n">255+</div><div class="hs-l">Companies</div></div>
+      <div class="hs"><div class="hs-n">11</div><div class="hs-l">Members</div></div>
     </div>
   </div>
+</section>
 
-  <!-- DEPT FILTER TABS -->
-  <div class="lt-tabs">
-    <div class="lt-tabs-in">
-      <span class="lt-tab on" data-filter="all">All Team</span>
-      <span class="lt-tab" data-filter="Leadership">Leadership</span>
-      <span class="lt-tab" data-filter="People & Culture">People &amp; Culture</span>
-      <span class="lt-tab" data-filter="AI & Automation">AI &amp; Automation</span>
-      <span class="lt-tab" data-filter="Video & Advertising">Video &amp; Ads</span>
-      <span class="lt-tab" data-filter="Web Development">Web Dev</span>
-    </div>
+<!-- DEPT TABS -->
+<div class="dtabs">
+  <div class="dtabs-in" id="dtabs">
+    <a href="#leadership" class="dtab on">Leadership</a>
+    <a href="#hr"         class="dtab">People &amp; Culture</a>
+    <a href="#ai"         class="dtab">AI &amp; Automation</a>
+    <a href="#video"      class="dtab">Video &amp; Ads</a>
+    <a href="#web"        class="dtab">Web Dev</a>
   </div>
+</div>
 
-  <!-- LEADERSHIP -->
-  <div class="lt-dept" data-dept="Leadership" id="lt-leadership">
-    <div class="lt-sec-hd lt-rv">
-      <div><h3>Leadership</h3><div class="lt-sec-sub">Driving vision, strategy &amp; culture from the front.</div></div>
-      <span class="lt-badge">2 Members</span>
-    </div>
-    <div class="lt-grid">
-      <div class="lt-card lt-rv d1" data-id="0" tabindex="0" role="button">
-        <div class="lt-photo">
+<!-- LEADERSHIP -->
+<section class="dept" id="leadership">
+  <div class="sec-in">
+    <div class="sec-hd rv"><div class="sec-hd-l"><h2>Leadership</h2><p>Driving vision, strategy &amp; culture from the front.</p></div><span class="sec-badge">2 Members</span></div>
+    <div class="team-grid">
+      <div class="tcard rv d1" data-id="0" tabindex="0" role="button" aria-label="View Dr. Beena Pinto profile">
+        <div class="tc-photo">
           <img src="https://litos.co.in/wp-content/uploads/2023/04/B-.jpg" alt="Dr. Beena Pinto" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="lt-init" style="display:none">BP</div>
-          <div class="lt-ov"><span>View Profile</span></div>
+          <div class="tc-init" style="display:none">BP</div>
+          <div class="tc-overlay"><span>View Profile</span></div>
         </div>
-        <div class="lt-strip"></div>
-        <div class="lt-info"><div class="lt-name">Dr. Beena Pinto</div><div class="lt-role">Founder &amp; CEO</div></div>
+        <div class="tc-strip"></div>
+        <div class="tc-info"><div class="tc-name">Dr. Beena Pinto</div><div class="tc-role">Founder &amp; CEO</div></div>
       </div>
-      <div class="lt-card lt-rv d2" data-id="1" tabindex="0" role="button">
-        <div class="lt-photo">
-          <div class="lt-init">MR</div>
-          <div class="lt-ov"><span>View Profile</span></div>
+      <div class="tcard rv d2" data-id="1" tabindex="0" role="button" aria-label="View Mradula profile">
+        <div class="tc-photo">
+          <div class="tc-init">MR</div>
+          <div class="tc-overlay"><span>View Profile</span></div>
         </div>
-        <div class="lt-strip"></div>
-        <div class="lt-info"><div class="lt-name">Mradula</div><div class="lt-role">Chief Marketing Officer</div></div>
+        <div class="tc-strip"></div>
+        <div class="tc-info"><div class="tc-name">Mradula</div><div class="tc-role">Chief Marketing Officer</div></div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- PEOPLE & CULTURE -->
-  <div class="lt-dept" data-dept="People & Culture" id="lt-hr">
-    <div class="lt-sec-hd lt-rv">
-      <div><h3>People &amp; Culture</h3><div class="lt-sec-sub">Building the team that makes great work possible.</div></div>
-      <span class="lt-badge">1 Member</span>
-    </div>
-    <div class="lt-grid">
-      <div class="lt-card lt-rv d1" data-id="2" tabindex="0" role="button">
-        <div class="lt-photo"><div class="lt-init">SN</div><div class="lt-ov"><span>View Profile</span></div></div>
-        <div class="lt-strip"></div>
-        <div class="lt-info"><div class="lt-name">Simran Nair</div><div class="lt-role">HR Lead</div></div>
+<!-- HR -->
+<section class="dept" id="hr">
+  <div class="sec-in">
+    <div class="sec-hd rv"><div class="sec-hd-l"><h2>People &amp; Culture</h2><p>Building the team that makes great work possible.</p></div><span class="sec-badge">1 Member</span></div>
+    <div class="team-grid">
+      <div class="tcard rv d1" data-id="2" tabindex="0" role="button">
+        <div class="tc-photo"><div class="tc-init">SN</div><div class="tc-overlay"><span>View Profile</span></div></div>
+        <div class="tc-strip"></div>
+        <div class="tc-info"><div class="tc-name">Simran Nair</div><div class="tc-role">HR Lead</div></div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- AI & AUTOMATION -->
-  <div class="lt-dept" data-dept="AI & Automation" id="lt-ai">
-    <div class="lt-sec-hd lt-rv">
-      <div><h3>AI &amp; Automation</h3><div class="lt-sec-sub">Powering smarter operations &amp; intelligent delivery.</div></div>
-      <span class="lt-badge">2 Members</span>
-    </div>
-    <div class="lt-grid">
-      <div class="lt-card lt-rv d1" data-id="3" tabindex="0" role="button">
-        <div class="lt-photo"><div class="lt-init">AK</div><div class="lt-ov"><span>View Profile</span></div></div>
-        <div class="lt-strip"></div>
-        <div class="lt-info"><div class="lt-name">Arjun Krish</div><div class="lt-role">AI Engineer</div></div>
+<!-- AI -->
+<section class="dept" id="ai">
+  <div class="sec-in">
+    <div class="sec-hd rv"><div class="sec-hd-l"><h2>AI &amp; Automation</h2><p>Powering smarter operations &amp; intelligent delivery.</p></div><span class="sec-badge">2 Members</span></div>
+    <div class="team-grid">
+      <div class="tcard rv d1" data-id="3" tabindex="0" role="button">
+        <div class="tc-photo"><div class="tc-init">AK</div><div class="tc-overlay"><span>View Profile</span></div></div>
+        <div class="tc-strip"></div>
+        <div class="tc-info"><div class="tc-name">Arjun Krish</div><div class="tc-role">AI Engineer</div></div>
       </div>
-      <div class="lt-card lt-rv d2" data-id="4" tabindex="0" role="button">
-        <div class="lt-photo"><div class="lt-init">PV</div><div class="lt-ov"><span>View Profile</span></div></div>
-        <div class="lt-strip"></div>
-        <div class="lt-info"><div class="lt-name">Priya Venkat</div><div class="lt-role">Automation Lead</div></div>
+      <div class="tcard rv d2" data-id="4" tabindex="0" role="button">
+        <div class="tc-photo"><div class="tc-init">PV</div><div class="tc-overlay"><span>View Profile</span></div></div>
+        <div class="tc-strip"></div>
+        <div class="tc-info"><div class="tc-name">Priya Venkat</div><div class="tc-role">Automation Lead</div></div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- VIDEO & ADVERTISING -->
-  <div class="lt-dept" data-dept="Video & Advertising" id="lt-video">
-    <div class="lt-sec-hd lt-rv">
-      <div><h3>Video &amp; Advertising</h3><div class="lt-sec-sub">Crafting content &amp; campaigns that drive real results.</div></div>
-      <span class="lt-badge">5 Creators</span>
-    </div>
-    <div class="lt-grid">
-      <div class="lt-card lt-rv d1" data-id="5" tabindex="0" role="button">
-        <div class="lt-photo"><div class="lt-init">RJ</div><div class="lt-ov"><span>View Profile</span></div></div>
-        <div class="lt-strip"></div>
-        <div class="lt-info"><div class="lt-name">Rahul Jain</div><div class="lt-role">Senior Video Editor</div></div>
+<!-- VIDEO -->
+<section class="dept" id="video">
+  <div class="sec-in">
+    <div class="sec-hd rv"><div class="sec-hd-l"><h2>Video &amp; Advertising</h2><p>Crafting content &amp; campaigns that drive real results.</p></div><span class="sec-badge">5 Creators</span></div>
+    <div class="team-grid">
+      <div class="tcard rv d1" data-id="5" tabindex="0" role="button">
+        <div class="tc-photo"><div class="tc-init">RJ</div><div class="tc-overlay"><span>View Profile</span></div></div>
+        <div class="tc-strip"></div>
+        <div class="tc-info"><div class="tc-name">Rahul Jain</div><div class="tc-role">Senior Video Editor</div></div>
       </div>
-      <div class="lt-card lt-rv d2" data-id="6" tabindex="0" role="button">
-        <div class="lt-photo"><div class="lt-init">SK</div><div class="lt-ov"><span>View Profile</span></div></div>
-        <div class="lt-strip"></div>
-        <div class="lt-info"><div class="lt-name">Shreya Kulkarni</div><div class="lt-role">Creative Producer</div></div>
+      <div class="tcard rv d2" data-id="6" tabindex="0" role="button">
+        <div class="tc-photo"><div class="tc-init">SK</div><div class="tc-overlay"><span>View Profile</span></div></div>
+        <div class="tc-strip"></div>
+        <div class="tc-info"><div class="tc-name">Shreya Kulkarni</div><div class="tc-role">Creative Producer</div></div>
       </div>
-      <div class="lt-card lt-rv d3" data-id="7" tabindex="0" role="button">
-        <div class="lt-photo"><div class="lt-init">AM</div><div class="lt-ov"><span>View Profile</span></div></div>
-        <div class="lt-strip"></div>
-        <div class="lt-info"><div class="lt-name">Ankit Mishra</div><div class="lt-role">Motion Designer</div></div>
+      <div class="tcard rv d3" data-id="7" tabindex="0" role="button">
+        <div class="tc-photo"><div class="tc-init">AM</div><div class="tc-overlay"><span>View Profile</span></div></div>
+        <div class="tc-strip"></div>
+        <div class="tc-info"><div class="tc-name">Ankit Mishra</div><div class="tc-role">Motion Designer</div></div>
       </div>
-      <div class="lt-card lt-rv d4" data-id="8" tabindex="0" role="button">
-        <div class="lt-photo"><div class="lt-init">NT</div><div class="lt-ov"><span>View Profile</span></div></div>
-        <div class="lt-strip"></div>
-        <div class="lt-info"><div class="lt-name">Neha Thakur</div><div class="lt-role">Ads Manager</div></div>
+      <div class="tcard rv d4" data-id="8" tabindex="0" role="button">
+        <div class="tc-photo"><div class="tc-init">NT</div><div class="tc-overlay"><span>View Profile</span></div></div>
+        <div class="tc-strip"></div>
+        <div class="tc-info"><div class="tc-name">Neha Thakur</div><div class="tc-role">Ads Manager</div></div>
       </div>
-      <div class="lt-card lt-rv d5" data-id="9" tabindex="0" role="button">
-        <div class="lt-photo"><div class="lt-init">VP</div><div class="lt-ov"><span>View Profile</span></div></div>
-        <div class="lt-strip"></div>
-        <div class="lt-info"><div class="lt-name">Varun P</div><div class="lt-role">Video Editor</div></div>
+      <div class="tcard rv d5" data-id="9" tabindex="0" role="button">
+        <div class="tc-photo"><div class="tc-init">VP</div><div class="tc-overlay"><span>View Profile</span></div></div>
+        <div class="tc-strip"></div>
+        <div class="tc-info"><div class="tc-name">Varun P</div><div class="tc-role">Video Editor</div></div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- WEB DEVELOPMENT -->
-  <div class="lt-dept" data-dept="Web Development" id="lt-web">
-    <div class="lt-sec-hd lt-rv">
-      <div><h3>Web Development</h3><div class="lt-sec-sub">Building the digital foundation Litos stands on.</div></div>
-      <span class="lt-badge">1 Member</span>
-    </div>
-    <div class="lt-grid">
-      <div class="lt-card lt-rv d1" data-id="10" tabindex="0" role="button">
-        <div class="lt-photo"><div class="lt-init">AS</div><div class="lt-ov"><span>View Profile</span></div></div>
-        <div class="lt-strip"></div>
-        <div class="lt-info"><div class="lt-name">Anand Singh</div><div class="lt-role">Web Developer</div></div>
+<!-- WEB -->
+<section class="dept" id="web">
+  <div class="sec-in">
+    <div class="sec-hd rv"><div class="sec-hd-l"><h2>Web Development</h2><p>Building the digital foundation Litos stands on.</p></div><span class="sec-badge">1 Member</span></div>
+    <div class="team-grid">
+      <div class="tcard rv d1" data-id="10" tabindex="0" role="button">
+        <div class="tc-photo"><div class="tc-init">AS</div><div class="tc-overlay"><span>View Profile</span></div></div>
+        <div class="tc-strip"></div>
+        <div class="tc-info"><div class="tc-name">Anand Singh</div><div class="tc-role">Web Developer</div></div>
       </div>
     </div>
   </div>
+</section>
 
-</div><!-- /lt-wrap -->
-
-<!-- MODAL (outside lt-wrap so fixed positioning works) -->
-<div class="lt-modal" id="lt-modal" role="dialog" aria-modal="true" aria-label="Team member profile">
-  <div class="lt-mbg" id="lt-mbg"></div>
-  <div class="lt-mbox">
-    <button class="lt-mclose" id="lt-mclose" aria-label="Close">&#x2715;</button>
-    <div class="lt-mhead" id="lt-mhead">
-      <div class="lt-mav" id="lt-mav"></div>
-      <div class="lt-mhtxt">
-        <div class="lt-mdept" id="lt-mdept"></div>
-        <div class="lt-mname" id="lt-mname"></div>
-        <div class="lt-mrole" id="lt-mrole"></div>
+<!-- MODAL -->
+<div class="modal-wrap" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-bg" id="modal-bg"></div>
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close" id="modal-close" aria-label="Close">&#x2715;</button>
+    <div class="modal-head" id="modal-head">
+      <div class="modal-avatar" id="modal-avatar"></div>
+      <div class="modal-head-txt">
+        <div class="modal-dept" id="modal-dept"></div>
+        <div class="modal-name" id="modal-name"></div>
+        <div class="modal-role" id="modal-role"></div>
       </div>
     </div>
-    <div class="lt-mbody" id="lt-mbody"></div>
+    <div class="modal-body" id="modal-body"></div>
   </div>
 </div>
 
 <script>
-(function(){
-const TEAM=[
-  {id:0,name:"Dr. Beena Pinto",role:"Founder & CEO",dept:"Leadership",
-   img:"https://litos.co.in/wp-content/uploads/2023/04/B-.jpg",init:"BP",
-   bio:"Over 20 years in corporate leadership, Dr. Beena Pinto is a certified Mindfulness Coach, Business Consultant, and serial entrepreneur. Founder of Litos, Anibee Chain of Preschools &amp; Gilbee Spices. Her work empowers entrepreneurs, corporates, and students to reach their full potential.",
-   expertise:["Mindfulness Coaching","Business Consulting","Corporate Strategy","Executive Leadership","Personal Development"],
-   tools:["SMART Goals Framework","NLP","Mindfulness-Based Stress Reduction","Business Model Canvas"],
-   awards:["eMERG Woman Achiever Award 2023","Professional Excellence Award"],
-   linkedin:"https://litos.co.in/about-us/"},
-  {id:1,name:"Mradula",role:"Chief Marketing Officer",dept:"Leadership",init:"MR",
-   bio:"Ex-Google brand strategist and growth leader. Mradula architects Litos's voice, market positioning, and all outbound marketing — turning complex services into compelling narratives that resonate across industries.",
-   expertise:["Brand Strategy","Digital Marketing","Growth Campaigns","Market Positioning","Content Strategy"],
-   tools:["Google Ads","HubSpot","Semrush","Google Analytics","Meta Business Suite"],
-   linkedin:"#"},
-  {id:2,name:"Simran Nair",role:"HR Lead",dept:"People & Culture",init:"SN",
-   bio:"Simran oversees talent acquisition, team wellbeing, and culture initiatives that ensure Litos attracts and retains exceptional people. She drives the programmes that make Litos a great place to work and grow.",
-   expertise:["Talent Acquisition","People Operations","Culture Building","Employee Wellbeing","Performance Management"],
-   tools:["Zoho HR","LinkedIn Recruiter","Keka","Google Workspace"],
-   linkedin:"#"},
-  {id:3,name:"Arjun Krish",role:"AI Engineer",dept:"AI & Automation",init:"AK",
-   bio:"Arjun builds the intelligent systems behind Litos — from LLM fine-tuning to NLP pipelines and computer vision solutions. He enables smarter, faster service delivery through cutting-edge AI infrastructure.",
-   expertise:["LLM Fine-tuning","Natural Language Processing","Computer Vision","AI Pipeline Architecture","Model Deployment"],
-   tools:["Python","TensorFlow","PyTorch","HuggingFace","LangChain","OpenAI API"],
-   linkedin:"#"},
-  {id:4,name:"Priya Venkat",role:"Automation Lead",dept:"AI & Automation",init:"PV",
-   bio:"Priya designs intelligent RPA workflows and AI agents that eliminate repetitive tasks and scale operational capacity for Litos and its clients. Her solutions free up teams to focus on what truly matters.",
-   expertise:["RPA Design","AI Agent Development","Workflow Optimization","Process Automation","System Integration"],
-   tools:["UiPath","Make.com","n8n","Zapier","Power Automate","Python"],
-   linkedin:"#"},
-  {id:5,name:"Rahul Jain",role:"Senior Video Editor",dept:"Video & Advertising",init:"RJ",
-   bio:"With 10+ years in post-production and digital advertising, Rahul has a sharp editorial eye for pacing, motion graphics, and branded storytelling. He has delivered campaigns across technology, education, and FMCG sectors.",
-   expertise:["Post-Production","Motion Graphics","Color Grading","Visual Storytelling","Ad Campaign Editing"],
-   tools:["Adobe After Effects","Adobe Premiere Pro","DaVinci Resolve","Cinema 4D"],
-   linkedin:"#"},
-  {id:6,name:"Shreya Kulkarni",role:"Creative Producer",dept:"Video & Advertising",init:"SK",
-   bio:"Shreya leads concept development and brand storytelling from brief to final cut, ensuring every campaign frame serves the strategic message. She bridges creative vision and production execution seamlessly.",
-   expertise:["Concept Development","Storyboarding","Campaign Direction","Brand Storytelling","Production Management"],
-   tools:["Figma","CapCut","Canva Pro","Adobe XD","Trello"],
-   linkedin:"#"},
-  {id:7,name:"Ankit Mishra",role:"Motion Designer",dept:"Video & Advertising",init:"AM",
-   bio:"Ankit creates 2D/3D animations and explainer videos that simplify complex ideas into visually engaging stories. His work spans product demos, corporate explainers, and high-impact brand animations.",
-   expertise:["2D Animation","3D Modeling & Animation","Explainer Videos","Visual Effects","Character Animation"],
-   tools:["Cinema 4D","Blender","Adobe After Effects","Adobe Illustrator"],
-   linkedin:"#"},
-  {id:8,name:"Neha Thakur",role:"Ads Manager",dept:"Video & Advertising",init:"NT",
-   bio:"Neha manages Meta and Google campaigns end-to-end, optimising creatives for maximum ROAS through systematic A/B testing and data-driven iteration. She has managed ad spends across multiple industry verticals.",
-   expertise:["Paid Media Strategy","A/B Testing","ROAS Optimisation","Performance Creative","Audience Targeting"],
-   tools:["Meta Ads Manager","Google Ads","Meta Business Suite","Google Analytics 4","Supermetrics"],
-   linkedin:"#"},
-  {id:9,name:"Varun P",role:"Video Editor",dept:"Video & Advertising",init:"VP",
-   bio:"Varun specialises in high-energy short-form content — Reels, Shorts, and social-first edits built to stop the scroll and drive engagement. Strong understanding of platform-specific formats and trending patterns.",
-   expertise:["Short-Form Video","Instagram Reels","YouTube Shorts","Fast-Cut Editing","Social Content"],
-   tools:["CapCut","Adobe Premiere Pro","VN Editor","InShot"],
-   linkedin:"#"},
-  {id:10,name:"Anand Singh",role:"Web Developer",dept:"Web Development",init:"AS",
-   bio:"Anand is the architect behind litos.co.in — building fast, accessible, and SEO-optimised WordPress experiences that perform beautifully on every device. Specialises in Elementor builds with a focus on page speed and conversion.",
-   expertise:["WordPress Development","Page Speed Optimisation","SEO","Responsive Design","Elementor Pro"],
-   tools:["WordPress","Elementor","Yoast SEO","GTmetrix","WooCommerce","WP Rocket"],
-   linkedin:"#"}
+const TEAM = [
+  {id:0,name:"Dr. Beena Pinto",role:"Founder & CEO",dept:"Leadership",img:"https://litos.co.in/wp-content/uploads/2023/04/B-.jpg",init:"BP",bio:"Over 20 years in corporate leadership, Dr. Beena Pinto is a certified Mindfulness Coach, Business Consultant, and serial entrepreneur. She is the founder of Litos, Anibee Chain of Preschools, and Gilbee Spices & Dry Fruits. Her work empowers entrepreneurs, corporates, and students to reach their full potential.",expertise:["Mindfulness Coaching","Business Consulting","Corporate Strategy","Executive Leadership","Personal Development"],tools:["SMART Goals Framework","NLP","Mindfulness-Based Stress Reduction","Business Model Canvas"],awards:["eMERG Woman Achiever Award 2023","Professional Excellence Award"],linkedin:"https://litos.co.in/about-us/"},
+  {id:1,name:"Mradula",role:"Chief Marketing Officer",dept:"Leadership",init:"MR",bio:"Ex-Google brand strategist and seasoned growth leader, Mradula architects Litos's voice, market positioning, and all outbound marketing. She transforms complex service offerings into compelling narratives that resonate across industries and geographies.",expertise:["Brand Strategy","Digital Marketing","Growth Campaigns","Market Positioning","Content Strategy"],tools:["Google Ads","HubSpot","Semrush","Google Analytics","Meta Business Suite"],linkedin:"#"},
+  {id:2,name:"Simran Nair",role:"HR Lead",dept:"People & Culture",init:"SN",bio:"Simran oversees all talent acquisition, team wellbeing, and culture initiatives that ensure Litos attracts and retains exceptional people. She drives the processes and programmes that make Litos a great place to work and grow.",expertise:["Talent Acquisition","People Operations","Culture Building","Employee Wellbeing","Performance Management"],tools:["Zoho HR","LinkedIn Recruiter","Keka","Google Workspace"],linkedin:"#"},
+  {id:3,name:"Arjun Krish",role:"AI Engineer",dept:"AI & Automation",init:"AK",bio:"Arjun builds the intelligent systems that power Litos — from LLM fine-tuning to NLP pipelines and computer vision solutions. He enables smarter, faster service delivery for clients through cutting-edge AI infrastructure.",expertise:["LLM Fine-tuning","Natural Language Processing","Computer Vision","AI Pipeline Architecture","Model Deployment"],tools:["Python","TensorFlow","PyTorch","HuggingFace","LangChain","OpenAI API"],linkedin:"#"},
+  {id:4,name:"Priya Venkat",role:"Automation Lead",dept:"AI & Automation",init:"PV",bio:"Priya designs intelligent RPA workflows and AI agents that eliminate repetitive tasks and scale operational capacity for Litos and its clients. Her automation solutions free up teams to focus on what truly matters.",expertise:["RPA Design","AI Agent Development","Workflow Optimization","Process Automation","System Integration"],tools:["UiPath","Make.com","n8n","Zapier","Power Automate","Python"],linkedin:"#"},
+  {id:5,name:"Rahul Jain",role:"Senior Video Editor",dept:"Video & Advertising",init:"RJ",bio:"With 10+ years in post-production and digital advertising, Rahul has a sharp editorial eye for pacing, motion graphics, and branded storytelling. He has delivered campaigns for brands across technology, education, and FMCG sectors.",expertise:["Post-Production","Motion Graphics","Color Grading","Visual Storytelling","Ad Campaign Editing"],tools:["Adobe After Effects","Adobe Premiere Pro","DaVinci Resolve","Cinema 4D"],linkedin:"#"},
+  {id:6,name:"Shreya Kulkarni",role:"Creative Producer",dept:"Video & Advertising",init:"SK",bio:"Shreya leads concept development and brand storytelling from brief to final cut, ensuring every campaign frame serves the strategic message. She bridges creative vision and production execution seamlessly.",expertise:["Concept Development","Storyboarding","Campaign Direction","Brand Storytelling","Production Management"],tools:["Figma","CapCut","Canva Pro","Adobe XD","Trello"],linkedin:"#"},
+  {id:7,name:"Ankit Mishra",role:"Motion Designer",dept:"Video & Advertising",init:"AM",bio:"Ankit creates 2D/3D animations and explainer videos that simplify complex ideas into visually engaging stories. His work spans product demos, corporate explainers, and high-impact brand animations.",expertise:["2D Animation","3D Modeling & Animation","Explainer Videos","Visual Effects","Character Animation"],tools:["Cinema 4D","Blender","Adobe After Effects","Adobe Illustrator"],linkedin:"#"},
+  {id:8,name:"Neha Thakur",role:"Ads Manager",dept:"Video & Advertising",init:"NT",bio:"Neha manages Meta and Google ad campaigns end-to-end, optimising performance creatives for maximum ROAS through systematic A/B testing and data-driven creative iteration. She has managed ad spends across multiple industry verticals.",expertise:["Paid Media Strategy","A/B Testing","ROAS Optimisation","Performance Creative","Audience Targeting"],tools:["Meta Ads Manager","Google Ads","Meta Business Suite","Google Analytics 4","Supermetrics"],linkedin:"#"},
+  {id:9,name:"Varun P",role:"Video Editor",dept:"Video & Advertising",init:"VP",bio:"Varun specialises in high-energy short-form content — Reels, Shorts, and social-first edits built to stop the scroll and drive engagement. He has a strong understanding of platform-specific formats and trending content patterns.",expertise:["Short-Form Video","Instagram Reels","YouTube Shorts","Fast-Cut Editing","Social Content"],tools:["CapCut","Adobe Premiere Pro","VN Editor","InShot"],linkedin:"#"},
+  {id:10,name:"Anand Singh",role:"Web Developer",dept:"Web Development",init:"AS",bio:"Anand is the architect behind litos.co.in, building fast, accessible, and SEO-optimised WordPress experiences that perform beautifully on every device. He specialises in Elementor-based builds with a focus on page speed and conversion.",expertise:["WordPress Development","Page Speed Optimisation","SEO","Responsive Design","Elementor Pro"],tools:["WordPress","Elementor","Yoast SEO","GTmetrix","WooCommerce","WP Rocket"],linkedin:"#"}
 ];
 
-let cur=0;
+let currentIdx = 0;
 
-function openModal(id){
-  const p=TEAM[id]; cur=id;
-  const av=document.getElementById('lt-mav');
-  av.innerHTML='';
-  if(p.img){
-    const im=document.createElement('img');
-    im.src=p.img;im.alt=p.name;
-    im.onerror=()=>{av.innerHTML=p.init;im.remove();};
+function openModal(id) {
+  const p = TEAM[id]; currentIdx = id;
+  const av = document.getElementById('modal-avatar');
+  av.innerHTML = '';
+  if (p.img) {
+    const im = document.createElement('img');
+    im.src = p.img; im.alt = p.name;
+    im.onerror = () => { av.textContent = p.init; im.remove(); };
     av.appendChild(im);
-  } else { av.textContent=p.init; }
-  document.getElementById('lt-mdept').textContent=p.dept;
-  document.getElementById('lt-mname').textContent=p.name;
-  document.getElementById('lt-mrole').textContent=p.role;
-
-  let h=`<p class="lt-mbio">${p.bio}</p><div class="lt-msecs">`;
-  h+=`<div><div class="lt-mslbl">Expertise</div><div class="lt-mtags">${p.expertise.map(t=>`<span class="lt-mtag">${t}</span>`).join('')}</div></div>`;
-  h+=`<div><div class="lt-mslbl">Tools &amp; Methods</div><div class="lt-mtags">${p.tools.map(t=>`<span class="lt-mtag t">${t}</span>`).join('')}</div></div>`;
-  if(p.awards&&p.awards.length)
-    h+=`<div><div class="lt-mslbl">Awards &amp; Recognition</div><div class="lt-mtags">${p.awards.map(a=>`<span class="lt-mtag a">${a}</span>`).join('')}</div></div>`;
-  h+=`</div>`;
-  const liTxt=p.linkedin&&p.linkedin!=='#'?'View Full Profile':'Connect on LinkedIn';
-  h+=`<div class="lt-mact">
-    <a href="${p.linkedin||'#'}" class="lt-mli" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-      ${liTxt}
+  } else { av.textContent = p.init; }
+  document.getElementById('modal-dept').textContent = p.dept;
+  document.getElementById('modal-name').textContent = p.name;
+  document.getElementById('modal-role').textContent = p.role;
+  let html = `<p class="modal-bio">${p.bio}</p><div class="modal-sections">`;
+  html += `<div><div class="msec-title">Expertise</div><div class="mtags">${p.expertise.map(t=>`<span class="mtag">${t}</span>`).join('')}</div></div>`;
+  html += `<div><div class="msec-title">Tools &amp; Methods</div><div class="mtags">${p.tools.map(t=>`<span class="mtag tool">${t}</span>`).join('')}</div></div>`;
+  if (p.awards && p.awards.length)
+    html += `<div><div class="msec-title">Awards &amp; Recognition</div><div class="mtags">${p.awards.map(a=>`<span class="mtag award">${a}</span>`).join('')}</div></div>`;
+  html += `</div>`;
+  const liLabel = p.linkedin && p.linkedin !== '#' ? 'View Full Profile' : 'Connect on LinkedIn';
+  html += `<div class="modal-actions">
+    <a href="${p.linkedin||'#'}" class="modal-li" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      ${liLabel}
     </a>
-    <div class="lt-mnav">
-      <button class="lt-mbtn" id="lt-prev" title="Previous" ${id===0?'disabled':''}>&#8592;</button>
-      <button class="lt-mbtn" id="lt-next" title="Next" ${id===TEAM.length-1?'disabled':''}>&#8594;</button>
+    <div class="modal-nav">
+      <button class="mnav-btn" id="mn-prev" ${id===0?'disabled':''}>&#8592;</button>
+      <button class="mnav-btn" id="mn-next" ${id===TEAM.length-1?'disabled':''}>&#8594;</button>
     </div>
-    <span class="lt-mdtag">${p.dept}</span>
+    <span class="modal-dept-tag">${p.dept}</span>
   </div>`;
-
-  document.getElementById('lt-mbody').innerHTML=h;
-  document.getElementById('lt-prev').onclick=()=>openModal(cur-1);
-  document.getElementById('lt-next').onclick=()=>openModal(cur+1);
-  document.getElementById('lt-modal').classList.add('open');
-  document.body.style.overflow='hidden';
+  document.getElementById('modal-body').innerHTML = html;
+  document.getElementById('mn-prev').onclick = () => openModal(currentIdx - 1);
+  document.getElementById('mn-next').onclick = () => openModal(currentIdx + 1);
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
-function closeModal(){
-  document.getElementById('lt-modal').classList.remove('open');
-  document.body.style.overflow='';
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
 }
 
-// card clicks
-document.querySelectorAll('.lt-card').forEach(c=>{
-  c.addEventListener('click',()=>openModal(+c.dataset.id));
-  c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(+c.dataset.id);}});
+document.querySelectorAll('.tcard').forEach(c => {
+  c.addEventListener('click', () => openModal(+c.dataset.id));
+  c.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(+c.dataset.id);}});
 });
-document.getElementById('lt-mclose').onclick=closeModal;
-document.getElementById('lt-mbg').onclick=closeModal;
-document.addEventListener('keydown',e=>{
-  if(!document.getElementById('lt-modal').classList.contains('open'))return;
-  if(e.key==='Escape')closeModal();
-  if(e.key==='ArrowRight'&&cur<TEAM.length-1)openModal(cur+1);
-  if(e.key==='ArrowLeft'&&cur>0)openModal(cur-1);
-});
-
-// dept filter tabs
-document.querySelectorAll('.lt-tab').forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    document.querySelectorAll('.lt-tab').forEach(t=>t.classList.remove('on'));
-    tab.classList.add('on');
-    const f=tab.dataset.filter;
-    document.querySelectorAll('.lt-dept').forEach(d=>{
-      d.style.display=(f==='all'||d.dataset.dept===f)?'':'none';
-    });
-  });
+document.getElementById('modal-close').onclick = closeModal;
+document.getElementById('modal-bg').onclick = closeModal;
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('modal').classList.contains('open')) return;
+  if (e.key==='Escape') closeModal();
+  if (e.key==='ArrowRight' && currentIdx < TEAM.length-1) openModal(currentIdx+1);
+  if (e.key==='ArrowLeft'  && currentIdx > 0)             openModal(currentIdx-1);
 });
 
-// scroll reveal
-const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');ro.unobserve(x.target);}});},{threshold:.06});
-document.querySelectorAll('.lt-rv').forEach(el=>ro.observe(el));
-})();
+const ro = new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');ro.unobserve(x.target);}});},{threshold:.06});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+const dids=['leadership','hr','ai','video','web'];
+const dtbs=document.querySelectorAll('.dtab');
+window.addEventListener('scroll',()=>{
+  let c='';
+  dids.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-140)c=id;});
+  dtbs.forEach(t=>t.classList.toggle('on',t.getAttribute('href')==='#'+c));
+},{passive:true});
 </script>
